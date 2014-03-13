@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+//
+//
+
+$(function () {
+  $("#contact-submit").on("click", function (event) {
+    // console.log($(".form-control"))
+    $(".form-control").each(function(i, input){
+      var $parent = $(input).parent();
+      // var $parent.removeClass
+      if (!$(input).val()){
+        $parent.append('<span class="glyphicon glyphicon-remove form-control-feedback"></span>')
+        $parent.attr('class', 'form-group has-error has-feedback');
+      } else {
+        $parent.attr("class", "form-group has-success has-feedback" )
+        $parent.append('<span class="glyphicon glyphicon-ok form-control-feedback"></span>')
+      }
+    })
+  })
+})
+

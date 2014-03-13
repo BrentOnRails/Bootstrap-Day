@@ -31,9 +31,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <!-- this is regular display nav -->
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
+            <li><%= link_to "Home", home_url %></li>
+            <li><%= link_to "Contact", contact_url %></li>
+            <li><%= link_to "About", about_url %></li>
              <li class="divider"></li>
           </ul>
 
@@ -52,13 +52,15 @@
     </nav>
 
     <div class="container">
-      <% if flash[:errors] %>
-        <ul style="color:red;text-shadow: 1px 1px 1px black;">
-          <% flash[:errors].each do |error| %>
-            <li><%= error %></li>
+
+      <% if flash%>
+          <% if flash[:errors] %>
+            <div class="alert alert-danger" id="errors_alert">
+            <% flash[:errors].each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+            </div>
           <% end %>
-        </ul>
-      <br>
       <% end %>
 
       <%= yield %>
