@@ -22,6 +22,9 @@ $(function () {
     // console.log($(".form-control"))
     $(".form-control").each(function(i, input){
       var $parent = $(input).parent();
+      if ($parent.children("span")[0]) {
+        $parent.children("span")[0].remove()
+      };
       // var $parent.removeClass
       if (!$(input).val()){
         $parent.append('<span class="glyphicon glyphicon-remove form-control-feedback"></span>')
