@@ -35,5 +35,22 @@ $(function () {
       }
     })
   })
+
+
+  // $('.carousel').carousel({
+  //   interval: 2000
+  // })
+
+  // $('body').scrollspy({ target: '.navbar-scrollspy' })
+
+  $('body').mousemove(function(e){
+      var amountMovedX = (e.pageX * -1 / 100);
+      var amountMovedY = (e.pageY * -1 / 100);
+      $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+  });
+
+  $(".this-one-here").tooltip();
+
+
 })
 
